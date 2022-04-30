@@ -1,0 +1,48 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[swedish]{babel} %göra så att autogenererade saker blir på svenska
+\usepackage[T1]{fontenc} %rendera åäö bättre
+\usepackage[utf8]{inputenc} %använda utf-8
+\usepackage[parfill]{parskip} %gör så att styckena blir den "rätta" sorten
+\usepackage[indention=0.5cm]{caption}
+\usepackage{mathtools}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{siunitx}
+\usepackage{gitinfo2}
+\usepackage{xcookybooky}
+\usepackage{hyperref}
+
+\title{\Huge Eriks Kokbok\\\medskip
+  \large Utgåva 2.0}
+\author{Erik Rimskog}
+% \date{}
+
+% NOTE: fix for outdated xcookybooky / updated lettrine
+% https://tex.stackexchange.com/a/481705
+\renewcommand{\step}
+{%
+  \stepcounter{step}%shouldn't be in the argument of lettrine
+  \lettrine
+  [%
+  lines=2,
+  lhang=0,
+  loversize=0.15,
+  slope=0em,
+  findent=1em,
+  nindent=0em
+  ]{\thestep}{}%
+}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+\tableofcontents
+\newpage
+\part{Eriks Specialiteter}
+
+\newpage
+\input{korvstroganoff}
+
+\end{document}
