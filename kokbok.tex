@@ -8,12 +8,17 @@
 \usepackage{float}
 \usepackage{enumitem}
 \usepackage{siunitx}
-\usepackage{gitinfo2}
+\usepackage{catchfile}
+\usepackage{xstring}
 \usepackage{xcookybooky}
 \usepackage{hyperref}
 
+\CatchFileDef{\HEAD}{.git/refs/heads/master}{}
+\newcommand{\shortHEAD}{\StrLeft{\HEAD}{7}}
+
 \title{\Huge Eriks Kokbok\\\medskip
-  \large Utgåva 2.0}
+  \large Utgåva 2.0\\\smallskip
+  \small\texttt\shortHEAD}
 \author{Erik Rimskog}
 % \date{}
 
@@ -33,6 +38,15 @@
   ]{\thestep}{}%
 }
 
+\setHeadlines{
+  inghead = Ingredienser,
+  portionvalue = Portioner,
+  prephead = Förberedelse,
+  hinthead = Tips
+}
+
+\newcommand{\optional}{\multicolumn{2}{l}{\rule{0em}{1.4em}\textbf{\textsc{[valfritt]}}}}
+
 \begin{document}
 
 \maketitle
@@ -42,7 +56,7 @@
 \newpage
 \part{Eriks Specialiteter}
 
-\newpage
-\input{korvstroganoff}
+\include{korvstroganoff}
+\include{pannkakor}
 
 \end{document}
