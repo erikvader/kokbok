@@ -1,3 +1,4 @@
+%TODO: skapa ett index av ingredienser?
 \documentclass[12pt,a4paper]{article}
 \usepackage[swedish]{babel} %göra så att autogenererade saker blir på svenska
 \usepackage[T1]{fontenc} %rendera åäö bättre
@@ -21,7 +22,7 @@
   \large Utgåva 2.0\\\smallskip
   \small\texttt\shortHEAD}
 \author{Erik Rimskog}
-% \date{}
+
 
 % NOTE: fix for outdated xcookybooky / updated lettrine
 % https://tex.stackexchange.com/a/481705
@@ -46,7 +47,11 @@
   hinthead = Tips
 }
 
-\newcommand{\optional}{\multicolumn{2}{l}{\rule{0em}{1.4em}\textbf{\textsc{[valfritt]}}}}
+\newcommand{\recipepicture}[1]{pictures/#1}
+\newcommand{\includerecipe}[1]{\include{recipes/#1}}
+
+\newcommand{\recipesektion}[1]{\multicolumn{2}{l}{\rule{0em}{1.4em}\textbf{\textsc{[#1]}}}}
+\newcommand{\optional}{\recipesektion{valfritt}}
 
 \begin{document}
 
@@ -56,10 +61,10 @@
 \tableofcontents
 \newpage
 \part{Eriks Specialiteter}
-\include{korvstroganoff}
-\include{pannkakor}
+\includerecipe{korvstroganoff}
+\includerecipe{pannkakor}
 
 \part{Victorias Specialiteter}
-\include{linscurry}
+\includerecipe{linscurry}
 
 \end{document}

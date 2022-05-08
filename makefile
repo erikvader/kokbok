@@ -1,6 +1,6 @@
 .PHONY: all clean
 all:
-	latexmk -pdf kokbok
+	latexmk -pdf -interaction=nonstopmode kokbok
 
 clean:
 	latexmk -C
