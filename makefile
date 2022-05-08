@@ -4,3 +4,4 @@ all:
 
 clean:
 	latexmk -C
+	find recipes -name '*.aux' -type f -delete

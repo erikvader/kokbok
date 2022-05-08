@@ -18,12 +18,14 @@
 \CatchFileDef{\HEAD}{.git/refs/heads/master}{}
 \newcommand{\shortHEAD}{\StrLeft{\HEAD}{7}}
 
+\DeclareSIUnit\liter{l}
+
 \title{\Huge Eriks Kokbok\\\medskip
   \large Utgåva 2.0\\\smallskip
   \small\texttt\shortHEAD}
 \author{Erik Rimskog}
 
-
+% xcookybooky %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % NOTE: fix for outdated xcookybooky / updated lettrine
 % https://tex.stackexchange.com/a/481705
 \renewcommand{\step}
@@ -47,12 +49,19 @@
   hinthead = Tips
 }
 
+\setRecipeLengths{pictureheight=5cm}
+
+% recipe commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\recipepicture}[1]{pictures/#1}
 \newcommand{\includerecipe}[1]{\include{recipes/#1}}
 
 \newcommand{\recipesektion}[1]{\multicolumn{2}{l}{\rule{0em}{1.4em}\textbf{\textsc{[#1]}}}}
 \newcommand{\optional}{\recipesektion{valfritt}}
 \newcommand{\shortstep}{\vspace{\baselineskip}}
+
+% Sources %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\nyfikengron}{Nyfiken grön: mera vego --- mindre regler}
+\newcommand{\portionenundertian}{Portionen under tian}
 
 \begin{document}
 
