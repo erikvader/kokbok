@@ -18,6 +18,10 @@
 \newcommand{\shortHEAD}{\StrLeft{\HEAD}{7}}
 
 \DeclareSIUnit\liter{l}
+\sisetup{
+  range-phrase={\,--\,},
+  range-units=single,
+}
 
 \title{\Huge Eriks Kokbok\\\medskip
   \large Utgåva 3.0\\\smallskip
@@ -48,7 +52,7 @@
   hinthead = Tips
 }
 
-\setRecipeLengths{pictureheight=5cm}
+\setRecipeLengths{pictureheight=4cm}
 
 % recipe commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\recipepicture}[1]{pictures/#1}
