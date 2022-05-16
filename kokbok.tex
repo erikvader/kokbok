@@ -14,19 +14,24 @@
 \usepackage{xcookybooky}
 \usepackage{hyperref}
 
+% versioning %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \CatchFileDef{\HEAD}{.git/refs/heads/master}{}
 \newcommand{\shortHEAD}{\StrLeft{\HEAD}{7}}
+\newcommand{\qualifier}{*} %TODO: ta bort om man gör en make release
+\newcommand{\version}{4.0\qualifier}
 
+% title page %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\Huge Eriks Kokbok\\\medskip
+  \large Utgåva \version\\\smallskip
+  \small\texttt\shortHEAD}
+\author{Erik Rimskog}
+
+% SI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \DeclareSIUnit\liter{l}
 \sisetup{
   range-phrase={\,--\,},
   range-units=single,
 }
-
-\title{\Huge Eriks Kokbok\\\medskip
-  \large Utgåva 3.0\\\smallskip
-  \small\texttt\shortHEAD}
-\author{Erik Rimskog}
 
 % xcookybooky %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % NOTE: fix for outdated xcookybooky / updated lettrine
