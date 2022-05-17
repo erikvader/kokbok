@@ -5,3 +5,6 @@ all:
 clean:
 	latexmk -C
 	find recipes -name '*.aux' -type f -delete
+
+stripimages:
+	find pictures -type f -print0 | xargs -0 exiv2 rm

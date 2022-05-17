@@ -17,12 +17,12 @@
 % versioning %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \CatchFileDef{\HEAD}{.git/refs/heads/master}{}
 \newcommand{\shortHEAD}{\StrLeft{\HEAD}{7}}
-\newcommand{\qualifier}{*} %TODO: ta bort om man gör en make release
-\newcommand{\version}{4.0\qualifier}
+\newcommand{\qualifier}{*}
+\newcommand{\version}{4.0}
 
 % title page %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{\Huge Eriks Kokbok\\\medskip
-  \large Utgåva \version\\\smallskip
+  \large Utgåva \version\qualifier\\\smallskip
   \small\texttt\shortHEAD}
 \author{Erik Rimskog}
 
@@ -70,6 +70,9 @@
 % Sources %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\nyfikengron}{Nyfiken grön: mera vego --- mindre regler}
 \newcommand{\portionenundertian}{Portionen under tian}
+
+% commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\unsure}[1]{\textit{\textcolor{orange}{#1}}}
 
 \begin{document}
 
