@@ -1,0 +1,32 @@
+[meta]
+version = 1
+
+[info]
+# add quotes when it is supported
+title = "Carbonara"
+picture = "carbonara"
+portions = 4
+introduction = """
+Tvättäkta carbonara som skulle få italienarna att vända sig i sina gravar!
+"""
+bakingtime = 20
+source = {url = "https://www.ica.se/recept/kramig-carbonara-722780/"}
+hint = """
+Det är svårt att blanda allting jämnt och fint i en kastrull, så det är enklare att
+servera de tre delarna för sig.
+"""
+
+[preparation]
+ingredients = [
+  {amount = 100, unit = "gram", name = "finriven pecorino eller parmesan"},
+  {amount = 750, unit = "gram", name = "spaghetti"},
+  {amount = 6, name = "ägg"},
+  {amount = 3, unit = "dl", repeat = 3, name = "tärnad bacon"},
+  {name = "salt och peppar"},
+]
+
+steps = [
+  "Koka spaghetting enligt anvisningarna på förpackningen och stek bacon.",
+  "Vispa ihop ägg, grädde, parmesan, salt och peppar i en bunke.",
+  "Blanda ihop allting till en sörja.",
+]

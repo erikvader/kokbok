@@ -6,3 +6,6 @@
 /*.toc
 /*.out
 /*.fdb_latexmk
+
+/kokbok-middle.tex
+/kokbok.tex

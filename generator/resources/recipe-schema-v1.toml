@@ -1,0 +1,23 @@
+[meta]
+version = "number"
+
+[info]
+title = "string"
+-picture = "string"
+-portions = "number"
+-introduction = "string"
+-bakingtime = "number"
+-hint = "string"
+
+[info.-source]
+-url = "string"
+-book = "string"
+
+[preparation]
+steps = ["string"]
+
+[[preparation.ingredients]]
+-amount = "number"
+-unit = "string"
+name = "string"
+-repeat = "number"
