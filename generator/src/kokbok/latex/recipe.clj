@@ -32,7 +32,7 @@
   (l/environment
    "recipe"
    :arg title
-   :optarg (l/optional seq
+   :optarg (l/opt-body
             (l/kv-pairs
              (cond-> []
                (some? portions) (conj [(l/raw "portion")

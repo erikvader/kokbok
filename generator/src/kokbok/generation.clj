@@ -156,26 +156,60 @@
       slurp
       (toml/read :keywordize)))
 
+(defn- latex-bakingtime [rec]
+  (when-some [{:keys [unit time]} (bakingtime rec)]
+    (lr/si (l/text time) unit)))
+
+(defn- latex-preparation [rec]
+  (when-some [s (steps rec)]
+    (map l/text s)))
+
+(defn- latex-ingredients [rec]
+  (when-some [ingds (ingredients rec)]
+    (map #(vector (lr/si (l/opt-text (:amount %))
+                         (:unit %)
+                         (l/opt-text (:repeat %)))
+                  (l/text (:name %)))
+         ingds)))
+
+(defn- year [date]
+  (-> "yyyy"
+   (java.text.SimpleDateFormat.)
+   (.format date)))
+
+(defn- latex-source [rec books]
+  (let [url (source-url rec)
+        book-key (source-book rec)]
+    (when (and (some? url)
+               (some? book-key))
+      (throw (ex-info "not allowed to have both kinds of sources"
+                      {:url url :book-key book-key})))
+    (cond
+      (some? url) (l/command "url" :arg (l/raw url))
+      (some? book-key) (let [book (or (get books (keyword book-key))
+                                      (throw (ex-info "book not found"
+                                                      {:book-key book-key})))]
+                         (l/conc
+                          (l/text (:title book))
+                          (l/raw " (" (year (:release book)) ")")))
+      :else nil)))
+
 (defn toml->latex [rec books]
   (typecheck rec)
   (l/as-print (lp/newpage))
   (l/as-print
    (lr/recipe (l/text (title rec))
-              :portions (l/text (portions rec))
-              :bakingtime (when-some [{:keys [unit time]} (bakingtime rec)]
-                            (lr/si (l/text time) unit))
-              :picture (l/raw (picture rec))
-              :introduction (l/text (introduction rec))
-              :hint (l/text (hint rec))
-              :preparation (map l/text (steps rec))
-              :ingredients (map #(vector (lr/si (l/optional some? l/text (:amount %))
-                                                (:unit %)
-                                                (l/optional some? l/text (:repeat %)))
-                                         (l/text (:name %)))
-                                (ingredients rec)))))
+              :portions (l/opt-text (portions rec))
+              :bakingtime (latex-bakingtime rec)
+              :picture (l/opt-raw (picture rec))
+              :introduction (l/opt-text (introduction rec))
+              :hint (l/opt-text (hint rec))
+              :preparation (latex-preparation rec)
+              :ingredients (latex-ingredients rec)
+              :source (latex-source rec books))))
 
 (defn generate-recipes [recipe-path books-path]
-  (let [books (read-toml books-path)]
+  (let [books (read-toml books-path)] ;;TODO: schema för books
     (doseq [p (-> recipe-path file .list)]
       (l/as-print (lp/part p))
       (let [subfolder (file recipe-path p)]

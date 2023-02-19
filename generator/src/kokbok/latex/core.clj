@@ -28,6 +28,15 @@
                    (when (~pred v#)
                      v#))))
 
+(defn opt-text [string]
+  (optional some? text string))
+
+(defn opt-raw [string]
+  (optional some? raw string))
+
+(defn opt-body [body]
+  (optional seq body))
+
 (defn statements [body]
   (->> (rawln)
        repeat

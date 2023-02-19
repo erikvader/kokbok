@@ -2,7 +2,7 @@
 version = 1
 
 [info]
-# add quotes when it is supported
+# TODO: add quotes when it is supported
 title = "Carbonara"
 picture = "carbonara"
 portions = 4
@@ -21,7 +21,8 @@ ingredients = [
   {amount = 100, unit = "gram", name = "finriven pecorino eller parmesan"},
   {amount = 750, unit = "gram", name = "spaghetti"},
   {amount = 6, name = "ägg"},
-  {amount = 3, unit = "dl", repeat = 3, name = "tärnad bacon"},
+  {amount = 3, unit = "dl", name = "vispgrädde"},
+  {amount = 140, unit = "g", repeat = 3, name = "tärnad bacon"},
   {name = "salt och peppar"},
 ]
 
