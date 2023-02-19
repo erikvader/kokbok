@@ -1,6 +1,4 @@
-(ns kokbok.latex.core
-  (:require
-   [kokbok.cl :refer [cl-aget cl-aget-all]]))
+(ns kokbok.latex.core)
 
 (defn as-string [body]
   (clojure.string/join body))
@@ -8,11 +6,13 @@
 (defn as-print [body]
   (doseq [b body] (print b)))
 
+(def conc concat)
+
 (defn raw [& more]
   more)
 
 (defn rawln [& more]
-  (concat more (list "\n")))
+  (conc more (list "\n")))
 
 (defn text [& more]
   ;;TODO: escape & and pass to raw. Or have an escape function?
@@ -20,33 +20,49 @@
   ;;TODO: convert ?hur mycket? into \unsure{hur mycket?} ?
   (apply raw more))
 
-(defn statements [& body]
+(defmacro optional
+  ([pred mapper value] `(let [v# ~value]
+                          (when (~pred v#)
+                            (~mapper v#))))
+  ([pred value] `(let [v# ~value]
+                   (when (~pred v#)
+                     v#))))
+
+(defn statements [body]
   (->> (rawln)
        repeat
        (interleave body)
-       (reduce concat)))
+       (reduce conc)))
 
 (defn surrounded [beg end body]
-  (concat (list beg) body (list end)))
+  (conc (raw beg) body (raw end)))
 
-(defn environment [name optargs args & body]
-  (concat
+(defmacro multify [plural singular]
+  `(let [p# ~plural
+         s# ~singular]
+     (cond
+       (some? p#) p#
+       (some? s#) (list s#)
+       :else nil)))
+
+(defn environment [name & {:keys [optargs args optarg arg body]}]
+  (conc
    (raw "\\begin{" name "}")
-   (mapcat (partial surrounded "[" "]") optargs)
-   (mapcat (partial surrounded "{" "}") args)
+   (mapcat (partial surrounded "[" "]") (multify optargs optarg))
+   (mapcat (partial surrounded "{" "}") (multify args arg))
    (rawln)
-   (apply statements body)
+   (statements body)
    (rawln "\\end{" name "}")))
 
-(defn command [name optargs args]
-  (concat
+(defn command [name & {:keys [args optargs arg optarg]}]
+  (conc
    (raw "\\" name)
-   (mapcat (partial surrounded "[" "]") optargs)
-   (mapcat (partial surrounded "{" "}") args)))
+   (mapcat (partial surrounded "[" "]") (multify optargs optarg))
+   (mapcat (partial surrounded "{" "}") (multify args arg))))
 
-(defn tabular-row [& body]
-  (concat
-   (reduce concat (interpose (raw "&") body))
+(defn tabular-row [& columns]
+  (conc
+   (reduce conc (interpose (raw "&") columns))
    (raw "\\\\")))
 
 (defn quotes [body]
@@ -58,8 +74,8 @@
 (defn math [body]
   (surrounded "$" "$" body))
 
-(defn kv-pairs [& pairs]
+(defn kv-pairs [pairs]
   (->> (for [[k v] pairs]
-         (concat k (raw "=") v))
+         (conc k (raw "=") v))
        (interpose (raw ","))
-       (reduce concat)))
+       (reduce conc)))

@@ -5,7 +5,8 @@
    [clojure.string :refer [join starts-with?]]
    [kokbok.latex.recipe :as lr]
    [kokbok.latex.primitives :as lp]
-   [toml.core :as toml]))
+   [toml.core :as toml]
+   [kokbok.latex.core :as l]))
 
 (defmacro defversion [name]
   `(do
@@ -157,25 +158,26 @@
 
 (defn toml->latex [rec books]
   (typecheck rec)
-  (lp/newpage)
-  (lr/recipe (title rec)
-             :portions (portions rec)
-             :bakingtime (when-some [{:keys [unit time]} (bakingtime rec)]
-                           (lr/si time unit))
-             :picture (picture rec)
-             :introduction (introduction rec)
-             :hint (hint rec)
-             :preparation (steps rec)
-             :ingredients (->> (ingredients rec)
-                               (map #(vector (lr/si (:amount %)
-                                                    (:unit %)
-                                                    (:repeat %))
-                                             (:name %))))))
+  (l/as-print (lp/newpage))
+  (l/as-print
+   (lr/recipe (l/text (title rec))
+              :portions (l/text (portions rec))
+              :bakingtime (when-some [{:keys [unit time]} (bakingtime rec)]
+                            (lr/si (l/text time) unit))
+              :picture (l/raw (picture rec))
+              :introduction (l/text (introduction rec))
+              :hint (l/text (hint rec))
+              :preparation (map l/text (steps rec))
+              :ingredients (map #(vector (lr/si (l/optional some? l/text (:amount %))
+                                                (:unit %)
+                                                (l/optional some? l/text (:repeat %)))
+                                         (l/text (:name %)))
+                                (ingredients rec)))))
 
 (defn generate-recipes [recipe-path books-path]
   (let [books (read-toml books-path)]
     (doseq [p (-> recipe-path file .list)]
-      (lp/part p)
+      (l/as-print (lp/part p))
       (let [subfolder (file recipe-path p)]
         (doseq [r (.list subfolder)]
           (toml->latex (read-toml (file subfolder r)) books))))))
