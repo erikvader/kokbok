@@ -4,18 +4,19 @@
    [kokbok.latex.core :as l]
    [kokbok.latex.primitives :as lp]
    [kokbok.latex.recipe :as lr]
-   [kokbok.toml :as t]))
+   [kokbok.toml :as t]
+   [kokbok.recipe :as r]))
 
 (defn- latex-bakingtime [rec]
-  (when-some [{:keys [unit time]} (t/bakingtime rec)]
+  (when-some [{:keys [unit time]} (r/bakingtime rec)]
     (lr/si (l/text time) unit)))
 
 (defn- latex-preparation [rec]
-  (when-some [s (t/steps rec)]
+  (when-some [s (r/steps rec)]
     (map l/text s)))
 
 (defn- latex-ingredients [rec]
-  (when-some [ingds (t/ingredients rec)]
+  (when-some [ingds (r/ingredients rec)]
     (map #(vector (lr/si (l/opt-text (:amount %))
                          (:unit %)
                          (l/opt-text (:repeat %)))
@@ -28,8 +29,8 @@
    (.format date)))
 
 (defn- latex-source [rec books]
-  (let [url (t/source-url rec)
-        book-key (t/source-book rec)]
+  (let [url (r/source-url rec)
+        book-key (r/source-book rec)]
     (when (and (some? url)
                (some? book-key))
       (throw (ex-info "not allowed to have both kinds of sources"
@@ -45,15 +46,15 @@
       :else nil)))
 
 (defn toml->latex [rec books]
-  (t/typecheck rec)
+  (r/typecheck rec)
   (l/as-print (lp/newpage))
   (l/as-print
-   (lr/recipe (l/text (t/title rec))
-              :portions (l/opt-text (t/portions rec))
+   (lr/recipe (l/text (r/title rec))
+              :portions (l/opt-text (r/portions rec))
               :bakingtime (latex-bakingtime rec)
-              :picture (l/opt-raw (t/picture rec))
-              :introduction (l/opt-text (t/introduction rec))
-              :hint (l/opt-text (t/hint rec))
+              :picture (l/opt-raw (r/picture rec))
+              :introduction (l/opt-text (r/introduction rec))
+              :hint (l/opt-text (r/hint rec))
               :preparation (latex-preparation rec)
               :ingredients (latex-ingredients rec)
               :source (latex-source rec books))))
