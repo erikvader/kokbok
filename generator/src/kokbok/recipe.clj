@@ -58,8 +58,9 @@
 
 (defversion ingredients)
 (defmethod ingredients 1 [rec]
-  (-> rec
-      (get-in [:preparation :ingredients])))
+  (as-> rec $
+    (get-in $ [:preparation :ingredients])
+    (map #(update % :name keyword) $)))
 
 (defversion steps)
 (defmethod steps 1 [rec]

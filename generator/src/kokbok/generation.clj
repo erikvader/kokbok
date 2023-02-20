@@ -15,18 +15,20 @@
   (when-some [s (r/steps rec)]
     (map l/text s)))
 
-(defn- latex-ingredients [rec]
+(defn- latex-ingredients [rec ingredients]
   (when-some [ingds (r/ingredients rec)]
     (map #(vector (lr/si (l/opt-text (:amount %))
                          (:unit %)
                          (l/opt-text (:repeat %)))
-                  (l/text (:name %)))
+                  (l/text (or (->> % :name (get ingredients))
+                              (throw (ex-info "unknown ingredient"
+                                              {:name (:name %)})))))
          ingds)))
 
 (defn- year [date]
   (-> "yyyy"
-   (java.text.SimpleDateFormat.)
-   (.format date)))
+      (java.text.SimpleDateFormat.)
+      (.format date)))
 
 (defn- latex-source [rec books]
   (let [url (r/source-url rec)
@@ -45,7 +47,7 @@
                           (l/raw " (" (year (:release book)) ")")))
       :else nil)))
 
-(defn toml->latex [rec books]
+(defn toml->latex [rec books ingredients]
   (r/typecheck rec)
   (l/as-print (lp/newpage))
   (l/as-print
@@ -56,13 +58,16 @@
               :introduction (l/opt-text (r/introduction rec))
               :hint (l/opt-text (r/hint rec))
               :preparation (latex-preparation rec)
-              :ingredients (latex-ingredients rec)
+              :ingredients (latex-ingredients rec ingredients)
               :source (latex-source rec books))))
 
-(defn generate-recipes [recipe-path books-path]
-  (let [books (t/read-toml books-path)] ;;TODO: schema för books
+(defn generate-recipes [recipe-path books-path ingredients-path]
+  (let [books (t/read-toml books-path)
+        ingredients (t/read-toml ingredients-path)] ;;TODO: schema för books
     (doseq [p (-> recipe-path file .list)]
       (l/as-print (lp/part p))
       (let [subfolder (file recipe-path p)]
         (doseq [r (.list subfolder)]
-          (toml->latex (t/read-toml (file subfolder r)) books))))))
+          (toml->latex (t/read-toml (file subfolder r))
+                       books
+                       ingredients))))))

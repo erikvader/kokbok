@@ -19,5 +19,5 @@ steps = ["string"]
 [[preparation.ingredients]]
 -amount = "number"
 -unit = "string"
-name = "string"
+name = "keyword"
 -repeat = "number"

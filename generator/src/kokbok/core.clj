@@ -10,5 +10,6 @@
 
   (let [root (first args)
         recipes-path (file root "recipes")
-        books-path (file root "books.toml")]
-    (generate-recipes recipes-path books-path)))
+        books-path (file root "books.toml")
+        ingredients-path (file root "ingredients.toml")]
+    (generate-recipes recipes-path books-path ingredients-path)))
