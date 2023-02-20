@@ -1,7 +1,8 @@
 (ns kokbok.schema
   (:require
    [clojure.set :refer [difference intersection]]
-   [clojure.string :refer [join starts-with?]]))
+   [clojure.string :refer [join starts-with?]]
+   [kokbok.toml :refer [toml-keyword?]]))
 
 (defn- schema-key-optional [s]
   (starts-with? s "-"))
@@ -15,16 +16,17 @@
   ([trail] (join "." trail))
   ([trail end] (path-of (conj trail end))))
 
-(def schema-types {"string" (type "")
-                   "number" (type 0)})
+(def schema-types {"string" string?
+                   "number" int?
+                   "keyword" toml-keyword?})
 
 (defn- schema-compliant-impl [schema rec path]
   (cond
     (and (string? schema)
-         (not= (get schema-types schema) (type rec)))
-    {:different-types [{:path (path-of path)
-                        :expected (get schema-types schema)
-                        :actual (type rec)}]}
+         (not ((get schema-types schema) rec)))
+    {:bad-value [{:path (path-of path)
+                  :type schema
+                  :value rec}]}
 
     (and (vector? schema)
          (vector? rec))

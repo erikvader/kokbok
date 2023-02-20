@@ -11,7 +11,7 @@ title = "string"
 
 [info.-source]
 -url = "string"
--book = "string"
+-book = "keyword"
 
 [preparation]
 steps = ["string"]
