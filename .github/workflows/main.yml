@@ -20,6 +20,7 @@ jobs:
         with:
           packages: make latexmk texlive-full leiningen
           version: 1.0
+          execute_install_scripts: true
 
       - name: Compile PDF
         run: make
