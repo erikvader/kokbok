@@ -3,8 +3,7 @@ all: pdf
 
 .PHONY: pdf
 pdf: kokbok.tex versions
-#latexmk -pdf -interaction=nonstopmode kokbok
-	touch kokbok.pdf
+	latexmk -pdf -interaction=nonstopmode kokbok
 
 .PHONY: kokbok.tex
 kokbok.tex: middle
@@ -16,11 +15,11 @@ middle:
 
 .PHONY: versions
 versions:
-	echo "\\newcommand{\\shortVersion}{$$(git describe --tags --abbrev=0 | cut -c 2-)}" > versions.tex
+	printf '\\newcommand{\\shortVersion}{%s}\n' "$$(git describe --tags --abbrev=0 | cut -c 2-)" > versions.tex
 	if git describe --exact-match --tags HEAD >/dev/null 2>&1 && git diff --quiet; then \
-		echo "\\newcommand{\\longVersion}{}" >> versions.tex; \
+		printf '\\newcommand{\\longVersion}{}' >> versions.tex; \
 	else \
-		echo "\\newcommand{\\longVersion}{$$(git describe --tags --dirty --long)}" >> versions.tex; \
+		printf '\\newcommand{\\longVersion}{%s}\n' "$$(git describe --tags --dirty --long)" >> versions.tex; \
 	fi
 
 .PHONY: clean
