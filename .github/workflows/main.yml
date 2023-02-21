@@ -23,7 +23,7 @@ jobs:
 
       # latexmk doesn't work when restored from apt-cache
       - name: Install latexmk
-        run: sudo apt install -y latexmk
+        run: sudo apt-get install -y latexmk
 
       - name: Compile PDF
         run: make
