@@ -19,7 +19,7 @@ jobs:
       - uses: awalsh128/cache-apt-pkgs-action@latest
         with:
           packages: make latexmk texlive-full leiningen
-          version: 1.0
+          version: 2.0
           execute_install_scripts: true
 
       - name: Compile PDF
