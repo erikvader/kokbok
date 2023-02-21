@@ -18,9 +18,12 @@ jobs:
           fetch-depth: 0
       - uses: awalsh128/cache-apt-pkgs-action@latest
         with:
-          packages: make latexmk texlive-full leiningen
+          packages: make texlive-full leiningen
           version: 2.0
-          execute_install_scripts: true
+
+      # latexmk doesn't work when restored from apt-cache
+      - name: Install latexmk
+        run: sudo apt install -y latexmk
 
       - name: Compile PDF
         run: make
