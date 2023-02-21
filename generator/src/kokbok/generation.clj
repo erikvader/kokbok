@@ -63,7 +63,7 @@
 
 (defn generate-recipes [recipe-path books-path ingredients-path]
   (let [books (t/read-toml books-path)
-        ingredients (t/read-toml ingredients-path)] ;;TODO: schema för books
+        ingredients (t/read-toml ingredients-path)]
     (doseq [p (-> recipe-path file .list)]
       (l/as-print (lp/part p))
       (let [subfolder (file recipe-path p)]
