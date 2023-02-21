@@ -8,22 +8,18 @@
 \usepackage{float}
 \usepackage{enumitem}
 \usepackage{siunitx}
-\usepackage{catchfile}
 \usepackage{xstring}
 \usepackage{xfrac}
 \usepackage{xcookybooky}
 \usepackage{hyperref}
 
 % versioning %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\CatchFileDef{\HEAD}{.git/refs/heads/master}{}
-\newcommand{\shortHEAD}{\StrLeft{\HEAD}{7}}
-\newcommand{\qualifier}{*}
-\newcommand{\version}{5.0}
+\input{versions.tex}
 
 % title page %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{\Huge Eriks Kokbok\\\medskip
-  \large Utgåva \version\qualifier\\\smallskip
-  \small\texttt\shortHEAD}
+  \large Utgåva \shortVersion\\\smallskip
+  \small\texttt\longVersion}
 \author{Erik Rimskog}
 
 % SI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
