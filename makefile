@@ -17,9 +17,9 @@ middle:
 versions:
 	echo "\\newcommand{\\shortVersion}{$$(git describe --tags --abbrev=0 | cut -c 2-)}" > versions.tex
 	if git describe --exact-match --tags HEAD >/dev/null 2>&1 && git diff --quiet; then \
-		echo "\\newcommand{\\longVersion}{}" >> versions.tex; \
+		echo -E "\\newcommand{\\longVersion}{}" >> versions.tex; \
 	else \
-		echo "\\newcommand{\\longVersion}{$$(git describe --tags --dirty --long)}" >> versions.tex; \
+		echo -E "\\newcommand{\\longVersion}{$$(git describe --tags --dirty --long)}" >> versions.tex; \
 	fi
 
 .PHONY: clean
