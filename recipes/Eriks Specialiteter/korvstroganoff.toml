@@ -1,0 +1,40 @@
+[meta]
+version = 1
+
+[info]
+title = "Korvstroganoff"
+picture = "korvstroganoff"
+portions = 4
+bakingtime = 45
+hint = "Använd falukorv från Anderssion & Tillman!"
+introduction = """
+Fantastiskt god korvstroganoff! Går utmärkt att variera smaken med olika sorters kryddor och tillsatser.
+"""
+
+[preparation]
+ingredients = [
+  {amount = 400, unit = "gram", name = "passeradetomater"},
+  {amount = 2.5, unit = "dl", name = "gradde"},
+  {amount = 1, name = "lok"},
+  {amount = 700, unit = "gram", name = "falukorv"},
+  {amount = 3, unit = "tsk", name = "mjol"},
+  {amount = 4, unit = "dl", name = "ris"},
+  {name = "paprikapulver"},
+  {name = "salt_peppar"},
+]
+
+# TODO:
+# optional-ingredients = [
+#   {name = "tabasco"},
+#   {name = "chilipulver"},
+#   {name = "sambal_oelek"},
+#   {name = "mango_chutney"},
+#   {name = "sweet_chili"},
+# ]
+
+steps = [
+  "Koka riset enligt anvisningen på förpackningen.",
+  "Hacka och stek löken i lagom mängd olja. Skär falukorven i strimlor och bryn tillsammans med löken",
+  "Häll ner tomaten, grädden, saltet och paprikapulvret. Smaksätt sedan, om ni vill, med något av de valfria ingredienserna. Lägg till lite hetta om så önskas.",
+  "För att göra såsen tjockare: blanda ut mjöl i lite vatten till en tjock smet och ha i korvstroganoffen tills önskad viskositet uppnås.",
+]
