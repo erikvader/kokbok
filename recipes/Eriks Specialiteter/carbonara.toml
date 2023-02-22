@@ -2,8 +2,7 @@
 version = 1
 
 [info]
-# TODO: add quotes when it is supported
-title = "Carbonara"
+title = "\"Carbonara\""
 picture = "carbonara"
 portions = 4
 introduction = """

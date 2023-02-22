@@ -17,7 +17,7 @@
   ([trail end] (path-of (conj trail end))))
 
 (def schema-types {"string" string?
-                   "number" int?
+                   "number" number?
                    "keyword" toml-keyword?})
 
 (defn- schema-compliant-impl [schema rec path]

@@ -1,4 +1,5 @@
-(ns kokbok.latex.core)
+(ns kokbok.latex.core
+  (:require [clojure.string :as s]))
 
 (defn as-string [body]
   (clojure.string/join body))
@@ -14,11 +15,32 @@
 (defn rawln [& more]
   (conc more (list "\n")))
 
+(defn escape [string]
+  (-> string
+      (s/replace "\\" "\\textbackslash{}")
+      (s/replace "%" "\\%")
+      (s/replace "{" "\\{")
+      (s/replace "}" "\\}")
+      (s/replace "&" "\\&")
+      (s/replace "#" "\\#")
+      (s/replace "<" "\\textless{}")
+      (s/replace ">" "\\textgreater{}")
+      (s/replace "_" "\\_")
+      (s/replace "$" "\\$")))
+
+(defn escape-quotes [string]
+  (s/replace string #"\"(.*?)\"" "``$1''"))
+
+(defn escape-unsure [string]
+  (s/replace string #"[?](.*?)[?]" "\\\\unsure{$1\\?}"))
+
 (defn text [& more]
-  ;;TODO: escape & and pass to raw. Or have an escape function?
-  ;; convert "" into ``''
-  ;;TODO: convert ?hur mycket? into \unsure{hur mycket?} ?
-  (apply raw more))
+  (->> more
+       clojure.string/join
+       escape
+       escape-quotes
+       escape-unsure
+       raw))
 
 (defmacro optional
   ([pred mapper value] `(let [v# ~value]

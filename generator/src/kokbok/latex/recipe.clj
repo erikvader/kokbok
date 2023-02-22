@@ -3,10 +3,12 @@
    [kokbok.latex.core :as l]))
 
 (def minute "\\minute")
-(def gram "g") ;;TODO: \gram
-(def deciliter "dl") ;;TODO: \deci\liter ??
-(def milliliter "ml") ;;TODO: \milli\liter ??
+(def gram "\\gram")
+(def deciliter "\\deci\\liter")
+(def milliliter "\\milli\\liter")
 (def liter "\\liter")
+(def tesked "\\tesked")
+(def matsked "\\matsked")
 (def units {"minute" minute
             "min" minute
             "g" gram
@@ -15,8 +17,8 @@
             "l" liter
             "liter" liter
             "ml" milliliter
-            ;;TODO: DeclareSIUnit\tesked{tsk}
-            ;;TODO: DeclareSIUnit\matsked{msk}
+            "tsk" tesked
+            "msk" matsked
             })
 
 (defn recipe [title & {:keys [portions
@@ -28,7 +30,7 @@
                               ingredients
                               preparation
                               hint
-                              source]}] ;;TODO: url och bok. Antingen en URL direkt i toml eller en lookup i en anna fil för saker som böcker
+                              source]}]
   (l/environment
    "recipe"
    :arg title

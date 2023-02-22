@@ -64,10 +64,10 @@
 (defn generate-recipes [recipe-path books-path ingredients-path]
   (let [books (t/read-toml books-path)
         ingredients (t/read-toml ingredients-path)]
-    (doseq [p (-> recipe-path file .list)]
+    (doseq [p (-> recipe-path file .list sort)]
       (l/as-print (lp/part p))
       (let [subfolder (file recipe-path p)]
-        (doseq [r (.list subfolder)]
+        (doseq [r (sort (.list subfolder))]
           (toml->latex (t/read-toml (file subfolder r))
                        books
                        ingredients))))))
