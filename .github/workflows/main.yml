@@ -17,7 +17,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      # latexmk doesn't work when restored from a cache useing awalsh128/cache-apt-pkgs-action unfortunately
+      # latexmk doesn't work when restored from a cache using awalsh128/cache-apt-pkgs-action unfortunately
       - name: Install packages
         run: sudo apt-get install -y latexmk make texlive-full leiningen
 
