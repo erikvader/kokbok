@@ -1,0 +1,21 @@
+[meta]
+version = 1
+
+[info]
+title = "Limevodka och sprite"
+picture = "vodkasprite"
+portions = 1
+bakingtime = 5
+introduction = """
+Jättegott! Det går säkert att använda vanlig vodka och lite limejuice istället för
+limevodka.
+"""
+
+[preparation]
+ingredients = [
+  {amount = 4, unit = "cl", name = "limevodka"},
+  {amount = 330, unit = "ml", name = "sprite"},
+  {name = "is"},
+]
+
+steps = ["Blanda ihop allt i ett glas med massor av is."]
