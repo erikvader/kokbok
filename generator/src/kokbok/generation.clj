@@ -15,8 +15,8 @@
   (when-some [s (r/steps rec)]
     (map l/text s)))
 
-(defn- latex-ingredients [rec ingredients]
-  (when-some [ingds (r/ingredients rec)]
+(defn- latex-ingredients [ingds ingredients]
+  (when (some? ingds)
     (map #(vector (lr/si (l/opt-text (:amount %))
                          (:unit %)
                          (l/opt-text (:repeat %)))
@@ -58,7 +58,8 @@
               :introduction (l/opt-text (r/introduction rec))
               :hint (l/opt-text (r/hint rec))
               :preparation (latex-preparation rec)
-              :ingredients (latex-ingredients rec ingredients)
+              :ingredients (latex-ingredients (r/ingredients rec) ingredients)
+              :optional-ingredients (latex-ingredients (r/optional-ingredients rec) ingredients)
               :source (latex-source rec books))))
 
 (defn generate-recipes [recipe-path books-path ingredients-path]

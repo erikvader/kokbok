@@ -21,6 +21,15 @@
             "msk" matsked
             })
 
+(defn- ingredients-list [ing optional-ing]
+  (let [ls (for [[unit desc] ing]
+             (l/tabular-row unit desc))]
+    (if (some? optional-ing)
+      (concat ls
+              (list (l/tabular-row (l/command "optional")))
+              (ingredients-list optional-ing nil))
+      ls)))
+
 (defn recipe [title & {:keys [portions
                               bakingtime
                               bakingtemperature
@@ -28,6 +37,7 @@
                               picture
                               introduction
                               ingredients
+                              optional-ingredients
                               preparation
                               hint
                               source]}]
@@ -59,9 +69,8 @@
                                                  :arg introduction))
            (some? ingredients) (conj (l/command "ingredients"
                                                 :arg (l/statements
-                                                      (for [[unit desc] ingredients]
-                                                        ;;TODO: \optional?
-                                                        (l/tabular-row unit desc)))))
+                                                      (ingredients-list ingredients
+                                                                        optional-ingredients))))
            (some? preparation) (conj (l/command "preparation"
                                                 :arg (l/statements
                                                       (for [step preparation]

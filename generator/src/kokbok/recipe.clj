@@ -62,6 +62,13 @@
     (get-in $ [:preparation :ingredients])
     (map #(update % :name keyword) $)))
 
+(defversion optional-ingredients)
+(defmethod optional-ingredients 1 [rec]
+  (as-> rec $
+    (get-in $ [:preparation :optional-ingredients])
+    (map #(update % :name keyword) $)
+    (seq $)))
+
 (defversion steps)
 (defmethod steps 1 [rec]
   (when-some [s (get-in rec [:preparation :steps])]

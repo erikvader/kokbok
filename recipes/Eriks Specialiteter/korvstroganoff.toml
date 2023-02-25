@@ -23,14 +23,13 @@ ingredients = [
   {name = "salt_peppar"},
 ]
 
-# TODO:
-# optional-ingredients = [
-#   {name = "tabasco"},
-#   {name = "chilipulver"},
-#   {name = "sambal_oelek"},
-#   {name = "mango_chutney"},
-#   {name = "sweet_chili"},
-# ]
+optional-ingredients = [
+  {name = "tabasco"},
+  {name = "chilipulver"},
+  {name = "sambal_oelek"},
+  {name = "mango_chutney"},
+  {name = "sweet_chili"},
+]
 
 steps = [
   "Koka riset enligt anvisningen på förpackningen.",

@@ -21,3 +21,9 @@ steps = ["string"]
 -unit = "string"
 name = "keyword"
 -repeat = "number"
+
+[[preparation.-optional-ingredients]]
+-amount = "number"
+-unit = "string"
+name = "keyword"
+-repeat = "number"
