@@ -1,0 +1,33 @@
+[meta]
+version = 1
+
+[info]
+title = "Spaghetti och Köttfärssås"
+picture = "köttfärssås"
+portions = 5
+bakingtime = 45
+hint = """
+Ta bort tacokryddan för att få en \"vanlig\" köttfärssås.
+"""
+
+[preparation]
+ingredients = [
+  {amount = 800, unit = "g", name = "krossadetomater"},
+  {amount = 1, name = "vitloksklyfta"},
+  {amount = 1, name = "lok"},
+  {amount = 1000, unit = "g", name = "kottfars"},
+  {name = "spaghetti"},
+  {name = "tomatpure"},
+  {amount = 1, name = "kottbuljong"},
+  {name = "tabasco"},
+  {name = "chilipulver"},
+  {name = "tacokrydda"},
+  {name = "salt_peppar"},
+]
+
+steps = [
+  "Koka pastan enligt anvisningen på förpackningen.",
+  "Hacka och stek löken i lagom mängd olja.",
+  "Bryn köttfärsen tillsammans med löken. Tillsätt sedan tomatpuré och vitlök.",
+  "Häll ner tomaten och buljongen. Krydda och låt puttra en stund.",
+]
