@@ -1,0 +1,34 @@
+[meta]
+version = 1
+
+[info]
+title = "Pannkakor"
+picture = "pannkakor"
+portions = 1
+bakingtime = 45
+introduction = """
+En väldigt enkel och omättande rätt.
+"""
+hint = """
+Den första pannkakan blir alltid den bästa!
+"""
+
+source = {url = "https://www.ica.se/recept/pannkakor-grundsmet-2083"}
+
+[preparation]
+ingredients = [
+  {amount = 2.5, unit = "dl", name = "mjol"},
+  {amount = 6, unit = "dl", name = "mjolk"},
+  {amount = 3, name = "agg"},
+]
+
+optional-ingredients = [
+  {name = "gradde"},
+  {name = "sylt"},
+  {name = "glass"},
+]
+
+steps = [
+  "Blanda ihop allting till en smet.",
+  "Stek i en stekpanna med lite smör.",
+]
