@@ -1,0 +1,30 @@
+[meta]
+version = 1
+
+[info]
+title = "Dojanröra"
+picture = "dojanröra"
+portions = 4
+bakingtime = 15
+introduction = """
+En rätt från Dojan när han slängde ihop lite godtyckliga ingredienser han hade hemma en
+gång.
+"""
+hint = """
+Skopa gärna ur det smälta fettet från baconet för att minska på snuskigheten.
+"""
+
+[preparation]
+ingredients = [
+  {amount = 5, unit = "dl", name = "cremefraiche"},
+  {name = "spaghetti"},
+  {amount = 160, unit = "g", name = "majs"},
+  {amount = 140, unit = "g", name = "bacon", repeat = 2},
+  {name = "dragon"},
+]
+
+steps = [
+  "Koka spaghettin enligt anvisningarna på förpackningen.",
+  "Stek bacon. Lägg till majset mot slutet.",
+  "Ha i crème fraiche och låt det bli till en tjock sås. Krydda med dragon.",
+]
