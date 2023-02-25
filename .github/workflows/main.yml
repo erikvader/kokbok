@@ -31,9 +31,9 @@ jobs:
           if-no-files-found: error
 
       - name: Create release
+        uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/v')
-        uses: marvinpinto/action-automatic-releases@latest
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          prerelease: false
           files: kokbok.pdf
+          fail_on_unmatched_files: true
+          generate_release_notes: true
