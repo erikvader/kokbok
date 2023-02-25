@@ -66,6 +66,7 @@
   (let [books (t/read-toml books-path)
         ingredients (t/read-toml ingredients-path)]
     (doseq [p (-> recipe-path file .list sort)]
+      (l/as-print (lp/newpage))
       (l/as-print (lp/part p))
       (let [subfolder (file recipe-path p)]
         (doseq [r (sort (.list subfolder))]

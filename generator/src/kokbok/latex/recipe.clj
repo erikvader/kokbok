@@ -5,6 +5,7 @@
 (def minute "\\minute")
 (def gram "\\gram")
 (def deciliter "\\deci\\liter")
+(def centiliter "\\centi\\liter")
 (def milliliter "\\milli\\liter")
 (def liter "\\liter")
 (def tesked "\\tesked")
@@ -14,6 +15,7 @@
             "g" gram
             "gram" gram
             "dl" deciliter
+            "cl" centiliter
             "l" liter
             "liter" liter
             "ml" milliliter
