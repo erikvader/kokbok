@@ -8,6 +8,8 @@ title = "string"
 -introduction = "string"
 -bakingtime = "number"
 -hint = "string"
+-preptime = "number"
+-bakingtemp = "number"
 
 [info.-source]
 -url = "string"

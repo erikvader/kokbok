@@ -7,9 +7,9 @@
    [kokbok.toml :as t]
    [kokbok.recipe :as r]))
 
-(defn- latex-bakingtime [rec]
-  (when-some [{:keys [unit time]} (r/bakingtime rec)]
-    (lr/si (l/text time) unit)))
+(defn- latex-time [unittime]
+  (when-some [{:keys [unit time]} unittime]
+    (lr/si (l/raw time) unit)))
 
 (defn- latex-preparation [rec]
   (when-some [s (r/steps rec)]
@@ -17,13 +17,17 @@
 
 (defn- latex-ingredients [ingds ingredients]
   (when (some? ingds)
-    (map #(vector (lr/si (l/opt-text (:amount %))
+    (map #(vector (lr/si (l/opt-raw (:amount %))
                          (:unit %)
-                         (l/opt-text (:repeat %)))
+                         (l/opt-raw (:repeat %)))
                   (l/text (or (->> % :name (get ingredients))
                               (throw (ex-info "unknown ingredient"
                                               {:name (:name %)})))))
          ingds)))
+
+(defn- latex-temp [temp]
+  (when (some? temp)
+    (lr/si (l/raw temp) "celsius")))
 
 (defn- year [date]
   (-> "yyyy"
@@ -52,8 +56,10 @@
   (l/as-print (lp/newpage))
   (l/as-print
    (lr/recipe (l/text (r/title rec))
-              :portions (l/opt-text (r/portions rec))
-              :bakingtime (latex-bakingtime rec)
+              :portions (l/opt-raw (r/portions rec))
+              :bakingtime (latex-time (r/bakingtime rec))
+              :preparationtime (latex-time (r/preptime rec))
+              :bakingtemperature (latex-temp (r/bakingtemp rec))
               :picture (l/opt-raw (r/picture rec))
               :introduction (l/opt-text (r/introduction rec))
               :hint (l/opt-text (r/hint rec))

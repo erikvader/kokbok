@@ -10,8 +10,11 @@
 (def liter "\\liter")
 (def tesked "\\tesked")
 (def matsked "\\matsked")
+(def celsius "\\celsius")
+
 (def units {"minute" minute
             "min" minute
+            "celsius" celsius
             "g" gram
             "gram" gram
             "dl" deciliter

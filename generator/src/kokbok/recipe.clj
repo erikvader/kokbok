@@ -22,6 +22,13 @@
       time
       {:time time :unit "minute"})))
 
+(defversion preptime)
+(defmethod preptime 1 [rec]
+  (when-some [time (get-in rec [:info :preptime])]
+    (if (map? time)
+      time
+      {:time time :unit "minute"})))
+
 (defversion title)
 (defmethod title 1 [rec]
   (-> rec
@@ -73,6 +80,10 @@
 (defmethod steps 1 [rec]
   (when-some [s (get-in rec [:preparation :steps])]
     (map trim s)))
+
+(defversion bakingtemp)
+(defmethod bakingtemp 1 [rec]
+  (get-in rec [:info :bakingtemp]))
 
 (defversion typecheck)
 (defmethod typecheck 1 [rec]
