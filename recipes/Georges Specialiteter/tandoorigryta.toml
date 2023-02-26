@@ -1,0 +1,32 @@
+[meta]
+version = 1
+
+[info]
+title = "Tandoorigryta"
+picture = "tandoorigryta"
+portions = 4
+bakingtime = 30
+source = {url = "https://undertian.com/recept/tandoorigryta-med-linser"}
+
+[preparation]
+ingredients = [
+  {name = "matvete"},
+  {amount = 1, name = "vitloksklyfta"},
+  {amount = 2, unit = "msk", name = "tandoori"},
+  {amount = 1, unit = "tsk", name = "sambal_oelek"},
+  {amount = 2.5, unit = "dl", name = "roda_linser"},
+  {amount = 3, unit = "dl", name = "vatten"},
+  {amount = 4, unit = "dl", name = "kokosmjolk"},
+  {amount = 1, name = "gronsaksbuljong"},
+  {amount = 2, name = "morot"},
+  {amount = 2, name = "inlagd_paprika"},
+  {name = "salt_peppar"},
+]
+
+steps = [
+  "Koka matvetet enligt anvisningen på förpackningen",
+  "Hacka vitlök och fräs i olja tillsammans med sambal oelek och tandooripastan",
+  "Lägg i linserna, vatten, kokosmjölk och buljong. Koka upp.",
+  "Skär morötterna i kuber och paprikan i strimlor. Lägg i morötterna efter 5 minuter. Lägg i paprikan efter ytterligare 5 minuter.",
+  "Koka i ytterligare 5 minuter tills linserna är mjuka",
+]
