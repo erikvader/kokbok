@@ -1,0 +1,30 @@
+[meta]
+version = 1
+
+[info]
+title = "Familjens Curryfavorit"
+picture = "familjenscurryfavorit"
+portions = 4
+bakingtime = 30
+source = {book = "nyfiken-gron"}
+
+[preparation]
+ingredients = [
+  {amount = 1, name = "lok"},
+  {amount = 3, name = "vitloksklyfta"},
+  {amount = 2, name = "morot"},
+  {amount = 15, unit = "ml", name = "curry"},
+  {amount = 2, unit = "dl", name = "roda_linser"},
+  {amount = 400, unit = "ml", repeat = 2, name = "kokosmjolk"},
+  {amount = 2, name = "gronsaksbuljong"},
+  {amount = 3, unit = "dl", name = "vatten"},
+  {amount = 0.5, name = "blomkalshuvud"},
+  {amount = 15, unit = "ml", name = "garam_masala"},
+  {name = "salt_peppar"},
+]
+
+steps = [
+  "Skala och hacka lök, vitlök och morötter. Fräs mjukt i olja tillsammans med curryn och linserna, rör om ordentligt under tiden så att smakerna kommer fram och inget bränns vid.",
+  "Häll i kokosmjölk, buljongtärningar och vatten. Koka under lock ca 10 minuter.",
+  "Bryt blomkålen i buketter, lägg dem i grytan och låt puttra ytterligare 5 minuter. Smaka av med salt och peppar.",
+]
