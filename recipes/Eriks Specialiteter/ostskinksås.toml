@@ -1,0 +1,31 @@
+[meta]
+version = 1
+
+[info]
+title = "Ost- och skinksås"
+picture = "ostskinksås"
+source = {url = "https://www.ica.se/recept/pasta-med-kramig-ost-och-skinksas-725815"}
+portions = 5
+introduction = """
+Precis som den var i skolan!
+"""
+
+[preparation]
+ingredients = [
+  {amount = 500, unit = "g", name = "pasta"},
+  {amount = 1, name = "lok"},
+  {name = "smor"},
+  {amount = 2.5, unit = "dl", name = "gradde"},
+  {amount = 1.5, unit = "dl", name = "mjolk"},
+  {amount = 2, unit = "tsk", name = "majsstarkelse"},
+  {amount = 1, name = "kycklingbuljong"},
+  {amount = 180, unit = "g", repeat = 2, name = "strimlad_skinka"},
+  {amount = 150, unit = "g", name = "riven_ost"},
+  {name = "salt_peppar"},
+]
+
+steps = [
+  "Koka pastan enligt anvisningen på förpackningen. Stek löken i smöret i en kastrull.",
+  "Blanda i grädden, mjölk och majsstärkelse. Smula i buljongen. Koka upp under upprörning.",
+  "Rör i skinkan och osten, låt allt bli varmt. Salta och peppra.",
+]
