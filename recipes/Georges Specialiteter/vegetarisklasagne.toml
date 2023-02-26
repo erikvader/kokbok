@@ -1,0 +1,39 @@
+[meta]
+version = 1
+
+[info]
+title = "Vegetarisk Lasagne"
+picture = "vegetarisk-lasagne"
+portions = 5
+bakingtemp = 225
+preptime = 60
+bakingtime = 20
+source = {url = "https://undertian.com/recept/billig-vegetarisk-lasagne"}
+
+[preparation]
+ingredients = [
+  {amount = 2, name = "lok"},
+  {amount = 3, unit = "dl", name = "roda_linser"},
+  {amount = 400, unit = "g", repeat = 2, name = "krossadetomater"},
+  {amount = 6, unit = "dl", name = "vatten"},
+  {amount = 3, name = "morot"},
+  {amount = 2, name = "gronsaksbuljong"},
+  {amount = 2, unit = "msk", name = "tomatpure"},
+  {amount = 2, name = "vitloksklyfta"},
+  {name = "oregano"},
+  {name = "timjan"},
+  {name = "basilika"},
+  {name = "salt_peppar"},
+  {amount = 5, unit = "dl", name = "cremefraiche"},
+  {amount = 2, unit = "dl", name = "riven_ost"},
+  {name = "lasagneplattor"},
+]
+
+steps = [
+  "Börja med att göra tomatsåsen: hacka gul lök och stek med olja i kastrull tills löken är blank.",
+  "Skölj linserna i kallt vatten. Lägg över i kastrullen. Slå på krossade tomater och vatten.",
+  "Skölj och riv morötterna och lägg i. Tillsätt buljong och tomatpuré och låt koka under lock i 10 minuter på medelsvag värme. Rör runt då och då.",
+  "Späd eventuellt med mer vatten när såsen har kokat klart. Den ska vara tjock och inte rinning. Pressa i vitlöken. Smaka av med kryddor.",
+  "Gör ostsås: blanda crème fraiche och ost. Osten ska smälta, men det skall ej koka. Spara ost till toppingen. Salta och peppra.",
+  "Varva med lasagneplattor, ostsås och linssörjan i en långpanna. Grädda mitt i ugnen.",
+]
