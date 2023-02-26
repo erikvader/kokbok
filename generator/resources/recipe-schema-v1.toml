@@ -19,6 +19,7 @@ title = "string"
 steps = ["string"]
 
 [[preparation.ingredients]]
+# TODO: allow int or string if floats becomes a problem
 -amount = "number"
 -unit = "string"
 name = "keyword"
