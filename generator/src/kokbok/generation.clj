@@ -68,14 +68,17 @@
               :optional-ingredients (latex-ingredients (r/optional-ingredients rec) ingredients)
               :source (latex-source rec books))))
 
-(defn generate-recipes [recipe-path books-path ingredients-path]
+(defn- decode-folder-name [folder]
+  (clojure.string/replace folder "_" " "))
+
+(defn generate-recipes [recipes-path books-path ingredients-path]
   (let [books (t/read-toml books-path)
         ingredients (t/read-toml ingredients-path)]
-    (doseq [p (-> recipe-path file .list sort)]
+    (doseq [section-name (-> recipes-path file .list sort)]
       (l/as-print (lp/newpage))
-      (l/as-print (lp/part p))
-      (let [subfolder (file recipe-path p)]
-        (doseq [r (sort (.list subfolder))]
-          (toml->latex (t/read-toml (file subfolder r))
+      (l/as-print (lp/part (decode-folder-name section-name)))
+      (let [section-path (file recipes-path section-name)]
+        (doseq [recipe-name (sort (.list section-path))]
+          (toml->latex (t/read-toml (file section-path recipe-name))
                        books
                        ingredients))))))
