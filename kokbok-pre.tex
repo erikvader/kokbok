@@ -50,6 +50,9 @@
 
 \setRecipeLengths{pictureheight=4cm}
 
+\renewcommand*{\recipesection}[2][]{\subsection[#1]{#2}}
+\setcounter{secnumdepth}{1}
+
 % recipe commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\recipepicture}[1]{pictures/#1}
 \newcommand{\includerecipe}[1]{\include{recipes/#1}}

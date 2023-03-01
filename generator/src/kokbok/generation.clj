@@ -76,7 +76,7 @@
         ingredients (t/read-toml ingredients-path)]
     (doseq [section-name (-> recipes-path file .list sort)]
       (l/as-print (lp/newpage))
-      (l/as-print (lp/part (decode-folder-name section-name)))
+      (l/as-print (lp/section (decode-folder-name section-name)))
       (let [section-path (file recipes-path section-name)]
         (doseq [recipe-name (sort (.list section-path))]
           (toml->latex (t/read-toml (file section-path recipe-name))
