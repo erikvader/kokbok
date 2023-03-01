@@ -3,6 +3,7 @@
 \usepackage[T1]{fontenc} %rendera åäö bättre
 \usepackage[utf8]{inputenc} %använda utf-8
 \usepackage{siunitx}
+\usepackage{tabularx}
 \usepackage{xcookybooky}
 \usepackage{hyperref}
 
@@ -19,6 +20,7 @@
 \DeclareSIUnit\liter{l}
 \DeclareSIUnit\tesked{tsk}
 \DeclareSIUnit\matsked{msk}
+\DeclareSIUnit\kryddsked{krm}
 \sisetup{
   range-phrase={\,--\,},
   range-units=single,
@@ -64,6 +66,7 @@
 % commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\unsure}[1]{\textit{\textcolor{orange}{#1}}}
 
+% document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
 \maketitle
@@ -71,4 +74,17 @@
 \newpage
 %TODO: för långt indenterade
 \tableofcontents
+\newpage
+
+\section{Konverteringstabell}
+\begin{center}
+  \begin{tabularx}{0.5\textwidth}{r@{\quad$=$\quad}l}
+    Den ena & Den andra \\
+    \hline
+    \SI{1}{\matsked} & \SI{15}{\milli\liter} \\
+    \SI{1}{\tesked} & \SI{5}{\milli\liter} \\
+    \SI{1}{\kryddsked} & \SI{1}{\milli\liter} \\
+    1 buljongtärning & \SI{1.5}{\matsked} \\
+  \end{tabularx}
+\end{center}
 \newpage
