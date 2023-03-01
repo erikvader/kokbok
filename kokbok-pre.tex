@@ -1,9 +1,12 @@
 \documentclass[12pt,a4paper]{article}
-\usepackage[swedish]{babel} %göra så att autogenererade saker blir på svenska
-\usepackage[T1]{fontenc} %rendera åäö bättre
-\usepackage[utf8]{inputenc} %använda utf-8
+\usepackage[swedish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage{siunitx}
+\usepackage{tocloft} % simply including this makes the toc spacing prettier
 \usepackage{tabularx}
+\let\oldsection\section
+\usepackage{titlesec}
 \usepackage{xcookybooky}
 \usepackage{hyperref}
 
@@ -53,7 +56,10 @@
 \setRecipeLengths{pictureheight=4cm}
 
 \renewcommand*{\recipesection}[2][]{\subsection[#1]{#2}}
+
+% section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setcounter{secnumdepth}{1}
+\renewcommand{\thesection}{\Alph{section}}
 
 % recipe commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\recipepicture}[1]{pictures/#1}
@@ -72,19 +78,8 @@
 \maketitle
 \thispagestyle{empty}
 \newpage
-%TODO: för långt indenterade
 \tableofcontents
+\thispagestyle{empty}
 \newpage
 
-\section{Konverteringstabell}
-\begin{center}
-  \begin{tabularx}{0.5\textwidth}{r@{\quad$=$\quad}l}
-    Den ena & Den andra \\
-    \hline
-    \SI{1}{\matsked} & \SI{15}{\milli\liter} \\
-    \SI{1}{\tesked} & \SI{5}{\milli\liter} \\
-    \SI{1}{\kryddsked} & \SI{1}{\milli\liter} \\
-    1 buljongtärning & \SI{1.5}{\matsked} \\
-  \end{tabularx}
-\end{center}
-\newpage
+\titleformat{\section}[display]{\normalfont\Large\filcenter\bfseries}{Avsnitt~\thesection}{1em}{\Huge}
