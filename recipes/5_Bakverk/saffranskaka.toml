@@ -1,0 +1,38 @@
+[meta]
+version = 1
+
+[info]
+title = "Saffranskaka"
+picture = "saffranskaka"
+introduction = """
+Jättegod kaka med mandelmassa och vit choklad. Det blir inte bra med varmluftsugn!
+"""
+source = {url = "https://undertian.com/recept/saffranskaka-med-mandel-och-vitchoklad"}
+bakingtemp = 200
+bakingtime = 45
+hint = """
+Vegansk variant:
+ersätt ägg med uppvisppat kikärtsspad (3 ägg motsvarar 1 dl ovispat spad), smöret med
+mjölkfritt margarin och chokladen till en vegansk choklad. Byt ut bovetemjöl till
+vetemjöl.
+"""
+
+[preparation]
+ingredients = [
+  {amount = 125, unit = "g", name = "smor"},
+  {amount = 100, unit = "g", name = "vit_choklad"},
+  {amount = 0.5, unit = "g", name = "saffran"},
+  {amount = 100, unit = "g", name = "mandelmassa"},
+  {amount = 2, unit = "dl", name = "bovetemjol"},
+  {amount = 2.5, unit = "dl", name = "socker"},
+  {amount = 1, unit = "krm", name = "salt"},
+  {amount = 3, name = "agg"},
+  {name = "florsocker"},
+]
+
+steps = [
+  "Smält smöret i en kastrull. Krossa chokladen i grova bitar. Rör ner choklad och saffran i det smälta smöret efter att du har tagit bort kastrullen från plattan.",
+  "Riv mandelmassan och blanda med mjöl, socker och salt i en bunke. Häll i den smälta smörblandningen i bunken och rör om. Tillsätt ett ägg i taget och rör om till en smet.",
+  "Smöra en ugnsfast form (ex. en rund ca 25 cm i diameter) eller täck med bakplåtspapper. Häll i smeten och grädda i mitten av ugnen ca 30 minuter. Håll koll så att kakan inte bränns vid (täck ev. men aluminiumfolie).",
+  "Ta ut kakan och låt svalna. Skär i bitar och pudra ev. över florsocker.",
+]
