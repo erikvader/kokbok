@@ -69,7 +69,9 @@
               :source (latex-source rec books))))
 
 (defn- decode-folder-name [folder]
-  (clojure.string/replace folder "_" " "))
+  (-> folder
+      (clojure.string/replace #"^[0-9]+_" "")
+      (clojure.string/replace "_" " ")))
 
 (defn generate-recipes [recipes-path books-path ingredients-path]
   (let [books (t/read-toml books-path)
