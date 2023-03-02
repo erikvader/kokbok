@@ -10,6 +10,7 @@
 (def liter "\\liter")
 (def tesked "\\tesked")
 (def matsked "\\matsked")
+(def kryddsked "\\kryddsked")
 (def celsius "\\celsius")
 
 (def units {"minute" minute
@@ -24,6 +25,7 @@
             "ml" milliliter
             "tsk" tesked
             "msk" matsked
+            "krm" kryddsked
             })
 
 (defn- ingredients-list [ing optional-ing]
