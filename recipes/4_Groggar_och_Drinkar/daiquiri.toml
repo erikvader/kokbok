@@ -1,0 +1,24 @@
+[meta]
+version = 1
+
+[info]
+title = "Daiquiri"
+picture = "daiquiri"
+portions = 1
+preptime = 5
+introduction = """
+Typ som mojito, fast utan sodavatten.
+"""
+source = {url = "https://www.tasteline.com/recept/daiquiri"}
+
+[preparation]
+ingredients = [
+  {amount = 5, unit = "cl", name = "ljus_rom"},
+  {amount = 3, unit = "cl", name = "limejuice"},
+  {amount = 2, unit = "cl", name = "sockerlag"},
+  {name = "is"},
+]
+
+steps = [
+  "Skaka ihop allt med is. Sila upp i ett glas",
+]
