@@ -75,6 +75,7 @@
            (some? introduction) (conj (l/command "introduction"
                                                  :arg introduction))
            (some? ingredients) (conj (l/command "ingredients"
+                                                ;;TODO: :optarg med antalet rader för att få bättre text wrapping
                                                 :arg (l/statements
                                                       (ingredients-list ingredients
                                                                         optional-ingredients))))

@@ -10,6 +10,7 @@ Jättegod kaka med mandelmassa och vit choklad. Det blir inte bra med varmluftsu
 source = {url = "https://undertian.com/recept/saffranskaka-med-mandel-och-vitchoklad"}
 bakingtemp = 200
 bakingtime = 45
+# TODO: \suggestion[Vegansk variant]{blah blah} istället för \hint{}
 hint = """
 Vegansk variant:
 ersätt ägg med uppvisppat kikärtsspad (3 ägg motsvarar 1 dl ovispat spad), smöret med
