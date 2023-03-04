@@ -1,0 +1,29 @@
+[meta]
+version = 1
+
+[info]
+title = "Mojito"
+picture = "mojito"
+portions = 1
+preptime = 5
+source = {url = "https://drinkoteket.se/recept/mojito"}
+introduction = """
+Bacardi är en bra ljus rom.
+"""
+
+[preparation]
+ingredients = [
+  {amount = 4, unit = "cl", name = "ljus_rom"},
+  {amount = 3, unit = "cl", name = "limejuice"},
+  {amount = 3, unit = "cl", name = "sockerlag"},
+  {amount = 4, unit = "cl", name = "sodavatten"},
+  {name = "is"},
+]
+
+optional-ingredients = [
+  {name = "mynta"},
+]
+
+steps = [
+  "Blanda allting i ett glas och rör om. Servera med massor av is. Garnera med mynta om du pallar.",
+]
