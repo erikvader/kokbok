@@ -1,0 +1,22 @@
+[meta]
+version = 1
+
+[info]
+title = "Mudslide"
+picture = "mudslide"
+portions = 1
+preptime = 5
+source = {url = "https://drinkoteket.se/recept/mudslide"}
+
+[preparation]
+ingredients = [
+  {amount = 3, unit = "cl", name = "vodka"},
+  {amount = 3, unit = "cl", name = "kahlua"},
+  {amount = 4.5, unit = "cl", name = "baileys"},
+  {name = "chokladsas"},
+]
+
+steps = [
+  "Ringla sås på insidan av glaset, fyll med is.",
+  "Skaka alla ingredienser med is, sila upp i glaset.",
+]
