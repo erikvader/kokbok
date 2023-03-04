@@ -1,0 +1,28 @@
+[meta]
+version = 1
+
+[info]
+title = ""
+picture = ""
+portions = 0
+bakingtemp = 0
+bakingtime = 0
+preptime = 0
+introduction = """
+"""
+hint = """
+"""
+source = {url = ""}
+
+[preparation]
+ingredients = [
+  {amount = 0, unit = "", repeat = 0, name = ""},
+]
+
+optional-ingredients = [
+  {amount = 0, unit = "", repeat = 0, name = ""},
+]
+
+steps = [
+  "",
+]
