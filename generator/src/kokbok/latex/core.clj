@@ -17,6 +17,7 @@
 
 (defn escape [string]
   (-> string
+      (s/replace " - " " --- ")
       (s/replace "\\" "\\textbackslash{}")
       (s/replace "%" "\\%")
       (s/replace "{" "\\{")
