@@ -39,4 +39,4 @@ clean:
 
 .PHONY: stripimages
 stripimages:
-	find pictures -type f -print0 | xargs -0 exiv2 rm
+	find *pictures -type f -print0 | tee >(tr '\0' '\n' >&2) | xargs -0 exiv2 rm
