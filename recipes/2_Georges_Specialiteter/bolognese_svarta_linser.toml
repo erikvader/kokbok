@@ -1,0 +1,41 @@
+[meta]
+version = 1
+
+[info]
+title = "Bolognese på svarta linser"
+picture = "bolognese_svarta_linser"
+portions = 7
+bakingtime = 30
+preptime = 60
+hint = """
+Det går att byta ut en del av linserna mot röda.
+"""
+# TODO: jag tror att det är den här boken. Referera till bilden i recipe_pictures istället?
+source = {book = "nyfiken-gron"}
+
+[preparation]
+ingredients = [
+  {name = "spaghetti"},
+  {amount = 3.5, unit = "dl", name = "svarta_linser"},
+  {amount = 2, name = "lok"},
+  {amount = 3, name = "vitloksklyfta"},
+  {amount = 2, name = "morot"},
+  {amount = 200, unit = "g", name = "rotselleri"},
+  {amount = 800, unit = "g", name = "krossadetomater"},
+  {amount = 2, name = "gronsaksbuljong"},
+  {amount = 0.5, unit = "dl", name = "ketchup"},
+  {amount = 2, unit = "dl", name = "rodvin"},
+  {amount = 1, unit = "msk", name = "soja"},
+  {amount = 1, unit = "msk", name = "dijonsenap"},
+  {name = "timjan"},
+  {name = "oregano"},
+  {name = "basilika"},
+  {name = "salt_peppar"},
+]
+
+steps = [
+  "Skala och hacka lök, vitlök, morot och rotselleri. Fräs i olja tillsammans med linserna",
+  "Tillsätt tomaterna, buljongen, ketchupen, vinet, senapen och sojan. Låt puttra på svag varme tills allt har kokat ihop, ca 30 minuter. Rör om då och då samt späd eventuellt med lite extra vatten.",
+  "Börja koka pastan medans det puttrar.",
+  "Mixa såsen till önskad konsistens. Späd med vatten om det behövs och smaka av med salt och peppar och de andra kryddorna.",
+]
