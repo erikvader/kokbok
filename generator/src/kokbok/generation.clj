@@ -48,6 +48,8 @@
                                                       {:book-key book-key})))]
                          (l/conc
                           (l/text (:title book))
+                          (when-some [sub (:subtitle book)]
+                            (l/text ": " sub))
                           (l/raw " (" (year (:release book)) ")")))
       :else nil)))
 
