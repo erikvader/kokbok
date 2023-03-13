@@ -1,0 +1,29 @@
+[meta]
+version = 1
+
+[info]
+title = "Paneng Red Curry"
+picture = "paneng_red_curry"
+portions = 5
+bakingtime = 40
+introduction = """
+Snabbt o enkelt att göra! Nam nam. Verkligen inte sponsrat utav Santa Maria®!
+"""
+# TODO: från en bild/ngt fysiskt som inte är en bok
+#source = {url = ""}
+
+[preparation]
+ingredients = [
+  {amount = 4, unit = "dl", name = "ris"},
+  {amount = 800, unit = "g", name = "kyckling"},
+  {repeat = 2, name = "santa_maria_paneng_red_curry"}, # TODO: verkligen två?
+  {amount = 400, unit = "ml", name = "kokosmjolk"}, # TODO: 500?
+  {amount = 1, unit = "dl", name = "vatten"}, # TODO: två?
+  {amount = 1, name = "paprika"},
+]
+
+steps = [
+  "Strimla och bryn kycklingen. Koka riset enligt anvisningen på förpackningen.",
+  "Tillsätt allting förutom paprikan och låt koka ihop ett par minuter.",
+  "Skär paprikan i mindre bitar och låt bli varm i grytan.",
+]
