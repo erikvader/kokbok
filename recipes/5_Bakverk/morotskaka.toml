@@ -1,0 +1,40 @@
+[meta]
+version = 1
+
+[info]
+title = "Morotskaka"
+picture = "morotskaka"
+portions = 24
+bakingtemp = 175
+bakingtime = 45
+introduction = """
+Hmmmm! Ett väldigt stort recept, baka med försiktighet.
+"""
+source = {url = "https://www.coop.se/recept/morotskaka-i-langpanna"}
+hint = "https://www.youtube.com/watch?v=2B9-7hOK0nM"
+
+[preparation]
+ingredients = [
+  {amount = 6, name = "agg"},
+  {amount = 6, unit = "dl", name = "socker"},
+  {amount = 360, unit = "g", name = "morot"},
+  {amount = 2, unit = "msk", name = "citronsaft"},
+  {amount = 4, unit = "dl", name = "olja"},
+  {amount = 6, unit = "dl", name = "vetemjol"},
+  {amount = 1, unit = "msk", name = "bakpulver"},
+  {amount = 1, unit = "msk", name = "kanel"},
+  {amount = 1, unit = "msk", name = "kardemumma"},
+  {amount = 1, unit = "tsk", name = "salt"},
+  {name = "apelsinskal"},
+  {amount = 300, unit = "g", name = "farskost"},
+  {amount = 75, unit = "g", name = "smor"},
+  {amount = 3, unit = "dl", name = "florsocker"},
+  {amount = 2, unit = "tsk", name = "vaniljsocker"},
+]
+
+steps = [
+  "Sätt på ugnen och klä en plåt med bakplåtspapper.",
+  "Vispa ägg och socker pösigt. Blanda morötter och citronsaft. Rör ner morötter och olja i äggvispet.",
+  "Rör ner mjöl, bakpulver, kanel, kardemumma och salt. Häll smeten i formen. Grädda i nedre delen av ugnen. Låt kallna helt.",
+  "Vispa ihop ingredienserna till glasyren med elvisp och bred ut på kakan. Garnera eventuellt med apelsinskap.",
+]
