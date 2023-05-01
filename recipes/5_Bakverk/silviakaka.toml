@@ -1,0 +1,38 @@
+[meta]
+version = 1
+
+[info]
+title = "Silviakaka"
+picture = "silviakaka"
+portions = 16
+bakingtemp = 175
+bakingtime = 40
+preptime = 30
+introduction = """
+Nam nam
+"""
+hint = """
+https://www.youtube.com/watch?v=2B9-7hOK0nM
+"""
+source = {url = "https://www.arla.se/recept/silviakaka"}
+
+[preparation]
+ingredients = [
+  {amount = 6, name = "agg"},
+  {amount = 5, unit = "dl", name = "socker"},
+  {amount = 1.5, unit = "dl", name = "vatten"},
+  {amount = 3, unit = "dl", name = "vetemjol"},
+  {amount = 1, unit = "msk", name = "bakpulver"},
+  {amount = 250, unit = "g", name = "smor"},
+  {amount = 1, unit = "msk", name = "vaniljsocker"},
+  {amount = 1, unit = "dl", name = "kokosflingor"},
+]
+
+steps = [
+  "Tag en ugnsfast form, cirkus 20x30cm, och stoppa i bakplåtspapper.",
+  "Vispa 3 ägg och 2 dl socker pösigt i en bunke, häll sedan ner vattnet.",
+  "Blanda i mjöl och bakpulver. Rör till en homogen smet och häll den i formen. Grädda mitt i ugnen cirkus 40 minuter, låt svalna",
+  "Smält smör och 2 dl socker i en kastrull. Låt koka upp och koka i 1 minut under ständig omrörning.",
+  "Tag kastrullen från värmen. Tilsätt 3 ägGULOR och vaniljsocker. Viska kraftigt tills krämen tjocknar, den får inte koka. Låt svalna något.",
+  "Häll glasyren över kakan och strö över kokos.",
+]
