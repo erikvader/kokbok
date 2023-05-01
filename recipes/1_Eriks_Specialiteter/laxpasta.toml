@@ -1,0 +1,36 @@
+[meta]
+version = 1
+
+[info]
+title = "Laxpasta"
+picture = "laxpasta"
+portions = 6
+preptime = 30
+introduction = """
+Jättegod pastarätt som går snabbt att göra!
+"""
+source = {url = "https://www.koket.se/kramig-laxpasta-med-tomat-och-orter"}
+
+[preparation]
+ingredients = [
+  {name = "pasta"},
+  {amount = 500, unit = "g", name = "laxfile"},
+  {amount = 1, name = "lok"},
+  {amount = 2, unit = "msk", name = "tomatpure"},
+  {amount = 5, unit = "dl", name = "cremefraiche"},
+  {amount = 2, unit = "dl", name = "mjolk"},
+  {amount = 1, unit = "tsk", name = "dijonsenap"},
+  {amount = 1, name = "fiskbuljong"},
+  {amount = 1, unit = "msk", name = "persilja"},
+  {amount = 1, unit = "msk", name = "basilika"},
+  {amount = 65, unit = "g", name = "bladspenat"},
+  {name = "citronsaft"},
+  {name = "salt_peppar"},
+]
+
+steps = [
+  "Skala och hacka löken. Fräs den i olja. Tillsätt tomatpuré.",
+  "Rör ner crème fraiche, grädde, dijonsenap, buljongtärningen och kryddorna. Låt koka i 10 minuter.",
+  "Koka pastan enligt anvisningen på förpackningen.",
+  "Skär laxen i bitar och vänd ner i såsen. Låt sjuda några minuter tills laxen är klar.",
+]
