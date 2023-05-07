@@ -19,7 +19,7 @@ ingredients = [
   {amount = 2, name = "gronsaksbuljong"},
   {amount = 3, unit = "dl", name = "vatten"},
   {amount = 0.5, name = "blomkalshuvud"},
-  {amount = 15, unit = "ml", name = "garam_masala"},
+  {amount = 15, unit = "ml", name = "garam_masala"}, # när ska denna läggas till?
   {name = "salt_peppar"},
 ]
 
