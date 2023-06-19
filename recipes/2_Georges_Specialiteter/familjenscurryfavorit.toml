@@ -10,6 +10,7 @@ source = {book = "nyfiken-gron"}
 
 [preparation]
 ingredients = [
+  {amount = 4, unit = "dl", name = "ris"},
   {amount = 1, name = "lok"},
   {amount = 3, name = "vitloksklyfta"},
   {amount = 2, name = "morot"},
@@ -19,12 +20,12 @@ ingredients = [
   {amount = 2, name = "gronsaksbuljong"},
   {amount = 3, unit = "dl", name = "vatten"},
   {amount = 0.5, name = "blomkalshuvud"},
-  {amount = 15, unit = "ml", name = "garam_masala"}, # när ska denna läggas till?
+  {amount = 15, unit = "ml", name = "garam_masala"},
   {name = "salt_peppar"},
 ]
 
 steps = [
-  "Skala och hacka lök, vitlök och morötter. Fräs mjukt i olja tillsammans med curryn och linserna, rör om ordentligt under tiden så att smakerna kommer fram och inget bränns vid.",
+  "Skala och hacka lök, vitlök och morötter. Fräs mjukt i olja tillsammans med curryn, garam masala och linserna, rör om ordentligt under tiden så att smakerna kommer fram och inget bränns vid.",
   "Häll i kokosmjölk, buljongtärningar och vatten. Koka under lock ca 10 minuter.",
   "Bryt blomkålen i buketter, lägg dem i grytan och låt puttra ytterligare 5 minuter. Smaka av med salt och peppar.",
 ]
