@@ -1,0 +1,37 @@
+[meta]
+version = 1
+
+[info]
+title = "Rökig Linsstroganoff"
+picture = "linsstroganoff"
+portions = 4
+bakingtime = 20
+preptime = 20
+introduction = """
+En godare variant av https://undertian.com/recept/vegetarisk-linsstroganoff, tror jag
+"""
+source = {url = "https://bonorochpotatis.se/rokig-linsstroganoff-med-soltorkade-tomater"}
+
+[preparation]
+ingredients = [
+  {amount = 4, unit = "dl", name = "ris"},
+  {amount = 3, unit = "dl", name = "roda_linser"},
+  {amount = 1, name = "lok"},
+  {amount = 1, unit = "msk", name = "rokt_paprikapulver"},
+  {amount = 1, name = "gronsaksbuljong"},
+  {amount = 2, unit = "msk", name = "tomatpure"},
+  {amount = 1, unit = "msk", name = "soja"},
+  {amount = 2.5, unit = "dl", name = "gradde"},
+  {amount = 1, unit = "dl", name = "vatten"},
+  {amount = 120, unit = "g", name = "soltorkade_tomater"},
+  {name = "salt_peppar"},
+]
+
+steps = [
+  "Koka linserna enligt anvisningen på förpackningen. Skala och finhacka 1 gul lök.",
+  "Stek löken tillsammans med paprikapulvret tills löken blivit genommjuk.",
+  "Tillsätt alla ingredienser, forutom tomaterna, och låt såsen koka ihop på svag värme i 10 minuter",
+  "Sjölj av linserna, tillsätt sedan till såsen och blanda väl.",
+  "Låt 1 burk hela soltorkade tomater rinna av lite från oljan. Skär sedan tomaterna i stora bitar, att dela varje tomat på hälften brukar vara lagom, och tillsätt dem sedan till såsen.",
+  "Smaka av med salt och peppar.",
+]
