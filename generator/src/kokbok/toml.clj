@@ -2,6 +2,8 @@
   (:require
    [toml.core :as toml]))
 
+;; TODO: can decimal numbers get weird? Is the precision a problem? Should strings also be
+;; accepted as numbers to combat this?
 (defn read-toml [filepath]
   (-> filepath
       slurp
