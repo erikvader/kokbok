@@ -2,7 +2,7 @@
 \usepackage[swedish]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{siunitx}
+\usepackage{siunitx}[=v2] % xcookybooky uses an older incompatible version
 \usepackage{tocloft} % simply including this makes the toc spacing prettier
 \usepackage{tabularx}
 \let\oldsection\section
@@ -20,7 +20,8 @@
 \author{Erik Rimskog}
 
 % SI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\DeclareSIUnit\liter{l}
+\DeclareSIUnit\litre{l} % recommended way to use a small letter, see the doc
+\DeclareSIUnit\liter{l} % but i guess it doesn't work in version 2...
 \DeclareSIUnit\tesked{tsk}
 \DeclareSIUnit\matsked{msk}
 \DeclareSIUnit\kryddsked{krm}
@@ -28,6 +29,10 @@
   range-phrase={\,--\,},
   range-units=single,
 }
+
+% fancyhdr %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% NOTE: fix fancyhdr warning the way it suggests
+\setlength{\headheight}{15pt}
 
 % xcookybooky %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % NOTE: fix for outdated xcookybooky / updated lettrine
