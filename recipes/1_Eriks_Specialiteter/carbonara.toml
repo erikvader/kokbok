@@ -4,7 +4,7 @@ version = 1
 [info]
 title = "\"Carbonara\""
 picture = "carbonara"
-portions = 4
+portions = 5
 introduction = """
 Tvättäkta carbonara som skulle få italienarna att vända sig i sina gravar!
 """
@@ -12,21 +12,21 @@ bakingtime = 20
 source = {url = "https://www.ica.se/recept/kramig-carbonara-722780/"}
 hint = """
 Det är svårt att blanda allting jämnt och fint i en kastrull, så det är enklare att
-servera de tre delarna för sig. Test även tärnad bacon.
+servera baconet för sig. Testa även tärnad bacon.
 """
 
 [preparation]
 ingredients = [
   {amount = 100, unit = "gram", name = "parmesan"},
-  {amount = 750, unit = "gram", name = "spaghetti"},
+  {amount = 500, unit = "gram", name = "spaghetti"},
   {amount = 6, name = "agg"},
   {amount = 3, unit = "dl", name = "gradde"},
-  {amount = 140, unit = "g", repeat = 3, name = "bacon"},
+  {amount = 140, unit = "g", repeat = 3, name = "bacon"}, # TODO: 4?
   {name = "salt_peppar"},
 ]
 
 steps = [
   "Koka spaghetting enligt anvisningarna på förpackningen och stek bacon.",
   "Vispa ihop ägg, grädde, parmesan, salt och peppar i en bunke.",
-  "Blanda ihop allting till en sörja.",
+  "Häll av vattnet, ersätt med gräddmixen och låt bli varm.",
 ]
