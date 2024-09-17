@@ -1,0 +1,27 @@
+[meta]
+version = 1
+
+[info]
+title = "Filur"
+picture = "filur"
+portions = 1
+bakingtime = 5
+introduction = """
+Frisk och fruktig
+"""
+hint = """
+Det går att pressa riktiga apelsiner om man vill vara riktigt fancy
+"""
+
+[preparation]
+ingredients = [
+  {amount = 1.5, unit = "dl", name = "apelsinjuice"},
+  {amount = 2, unit = "cl", name = "vodka"},
+  {amount = 1, unit = "dl", name = "rodlask"},
+  {name = "is"},
+]
+
+steps = [
+  "Blanda ihop allt i ett glas med massor av is.",
+  "Häll på läsken långsamt så den lägger sig ovanpå och ger en \"solnedgångseffekt\"."
+]
